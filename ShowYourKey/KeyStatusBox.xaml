@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ShowYourKey.KeyStatusBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShowYourKey"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="50">
+    <Grid  Background="#72000000">
+        <Grid Name="grid" Background="Transparent">
+            <Border x:Name="border"  BorderThickness="2,2,2,2" >
+                <Border.BorderBrush>
+                    <SolidColorBrush x:Name="BorderBrush" />
+                </Border.BorderBrush>
+                <Label x:Name="label" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="JetBrains Mono" FontSize="22" Foreground="{Binding ElementName=border,Path=BorderBrush}"/>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Rectangle.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+            Storyboard.TargetName="BorderBrush" 
+            Storyboard.TargetProperty="Color"
+            From="Yellow" To="Red" Duration="0:0:5" 
+            AutoReverse="True" RepeatBehavior="Forever" />
+
+                                <ColorAnimation
+            Storyboard.TargetName="BorderBrush" 
+            Storyboard.TargetProperty="Color"
+            From="Red" To="Blue" Duration="0:0:5" 
+            AutoReverse="True" RepeatBehavior="Forever" />
+
+                                <ColorAnimation
+            Storyboard.TargetName="BorderBrush" 
+            Storyboard.TargetProperty="Color"
+            From="Blue" To="Yellow" Duration="0:0:5" 
+            AutoReverse="True" RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
