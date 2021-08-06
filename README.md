@@ -7,4 +7,8 @@ A tool to show your operation of mouse or keyboard on the screen.
   Push `+` and move your mouse.
 - Close the window
 
-  RClick `+`
+  RClick `+`.
+
+# About
+Project `Hook` from [20chan](https://github.com/20chan).
+Project `ShowYourKey` from me.
